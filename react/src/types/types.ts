@@ -5,3 +5,8 @@ export interface Task {
   assigne: string;
   id: string;
 }
+
+export interface TaskCardProps {
+  task: Task;
+  index: number;
+}
