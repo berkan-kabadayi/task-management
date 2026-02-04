@@ -1,3 +1,5 @@
+import type React from "react";
+
 export interface Task {
   title: string;
   description: string;
@@ -14,4 +16,9 @@ export interface TaskCardProps {
 export interface TaskColumnProps {
   status: string;
   tasks: Task[];
+}
+
+export interface TaskBoardProps {
+  tasks: Task[]
+  setTasks: React.Dispatch<React.SetStateAction<Task[]>>
 }
