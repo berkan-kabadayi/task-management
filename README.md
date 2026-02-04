@@ -1,73 +1,70 @@
-# React + TypeScript + Vite
+# 🚀 Modern Task Management System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A sleek, modern, and high-performance Task Management application built with React, TypeScript, and React-Bootstrap. This project features a robust Drag-and-Drop system, allowing users to efficiently organize tasks across different stages.
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Drag and Drop Interface:** Seamlessly move tasks between columns (To Do, In Progress, Done) or reorder them within a column using `@hello-pangea/dnd`.
+- **Task Creation:** Quickly add new tasks via a modern Modal form with validation.
+- **Responsive Design:** Fully optimized for mobile, tablet, and desktop viewports.
+- **Premium Dark Theme:** Features a professional dark UI with smooth transitions, linear gradients, and interactive hover effects.
+- **Full Type Safety:** Developed with TypeScript for better maintainability and developer experience.
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Framework:** [React 18](https://reactjs.org/)
+- **Language:** [TypeScript](https://www.typescriptlang.org/)
+- **UI & Styling:** [React Bootstrap](https://react-bootstrap.github.io/) & Custom CSS3
+- **Drag & Drop:** [@hello-pangea/dnd](https://github.com/hello-pangea/dnd)
+- **ID Generation:** [nanoid](https://github.com/ai/nanoid)
 
-## Expanding the ESLint configuration
+## 🚀 Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Follow these steps to get the project running locally:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+1. **Clone the repository:**
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+   ```
+   git clone https://github.com/berkan-kabadayi/task-management.git
+   Navigate to the project directory:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+   ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. Navigate to the project directory:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+   cd task-management
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+3. Install dependencies:
+
+   npm install
+
+   # or
+
+   yarn install
+
+4. Start the development server:
+
+npm run dev
+
+# or
+
+yarn dev
+
+## 📂 Project Structure
+
+src/
+├── components/ # UI Components (TaskBoard, TaskCard, TaskColum, AddTaskForm)
+├── data/ # Initial mockup data (initialTask.ts)
+├── types/ # TypeScript interfaces (types.ts)
+├── App.css # Global styles and dark theme variables
+├── App.tsx # Main application entry point & state management
+├── index.css # Base styles
+└── main.tsx # React DOM rendering
+
+## ⚙️ Key Implementation Details
+
+State Management: Uses React's useState hook to manage the global task list.
+
+Drag Logic: The onDragEnd handler in TaskBoard.tsx manages complex array reordering and status updates when a task is dropped.
+
+Theming: Utilizes CSS variables for a consistent and easily customizable dark color palette.
