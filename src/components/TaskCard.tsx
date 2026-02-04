@@ -16,7 +16,7 @@ function TaskCard({ task, index }: TaskCardProps) {
             <Card.Body>
               <Card.Title>{task.title}</Card.Title>
               <Card.Text>{task.description}</Card.Text>
-              <Card.Subtitle className="text-muted text-end">
+              <Card.Subtitle className="text-light text-end">
                 Assignee: {task.assignee}
               </Card.Subtitle>
             </Card.Body>
