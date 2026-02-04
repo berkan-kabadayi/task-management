@@ -22,3 +22,10 @@ export interface TaskBoardProps {
   tasks: Task[]
   setTasks: React.Dispatch<React.SetStateAction<Task[]>>
 }
+
+
+export interface AddTaskFormProps {
+  show: boolean;
+  handleClose: () => void;
+  setTasks: React.Dispatch<React.SetStateAction<Task[]>>;
+}

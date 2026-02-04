@@ -10,7 +10,11 @@ function TaskColum({ tasks, status }: TaskColumnProps) {
         <h4 className="text-center">{status}</h4>
         <Droppable droppableId={status}>
           {(provided) => (
-            <div ref={provided.innerRef} {...provided.droppableProps}>
+            <div
+              ref={provided.innerRef}
+              {...provided.droppableProps}
+             
+            >
               {tasks.map((task, index) => (
                 <TaskCard key={task.id} task={task} index={index} />
               ))}
